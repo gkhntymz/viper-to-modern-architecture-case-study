@@ -6,30 +6,41 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A747E9EF2F4721E7007A9CFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9D92F4721E7007A9CFF /* AppDelegate.swift */; };
+		A747E9F02F4721E7007A9CFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9DA2F4721E7007A9CFF /* SceneDelegate.swift */; };
+		A747E9F12F4721E7007A9CFF /* LoginContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9DC2F4721E7007A9CFF /* LoginContracts.swift */; };
+		A747E9F22F4721E7007A9CFF /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9DD2F4721E7007A9CFF /* LoginEntity.swift */; };
+		A747E9F32F4721E7007A9CFF /* LoginInterector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9DE2F4721E7007A9CFF /* LoginInterector.swift */; };
+		A747E9F42F4721E7007A9CFF /* LoginModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9DF2F4721E7007A9CFF /* LoginModuleBuilder.swift */; };
+		A747E9F52F4721E7007A9CFF /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9E02F4721E7007A9CFF /* LoginPresenter.swift */; };
+		A747E9F62F4721E7007A9CFF /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9E12F4721E7007A9CFF /* LoginRouter.swift */; };
+		A747E9F72F4721E7007A9CFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9E22F4721E7007A9CFF /* LoginViewController.swift */; };
+		A747E9F82F4721E7007A9CFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9ED2F4721E7007A9CFF /* ViewController.swift */; };
+		A747E9F92F4721E7007A9CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A747E9E72F4721E7007A9CFF /* Assets.xcassets */; };
+		A747E9FB2F4721E7007A9CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A747E9EA2F4721E7007A9CFF /* LaunchScreen.storyboard */; };
+		A747E9FC2F4721E7007A9CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A747E9EC2F4721E7007A9CFF /* Main.storyboard */; };
+		A747E9FE2F4721F4007A9CFF /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9FD2F4721F0007A9CFF /* LoadingOverlay.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		A747E9D92F4721E7007A9CFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A747E9DA2F4721E7007A9CFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A747E9DC2F4721E7007A9CFF /* LoginContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContracts.swift; sourceTree = "<group>"; };
+		A747E9DD2F4721E7007A9CFF /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		A747E9DE2F4721E7007A9CFF /* LoginInterector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterector.swift; sourceTree = "<group>"; };
+		A747E9DF2F4721E7007A9CFF /* LoginModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleBuilder.swift; sourceTree = "<group>"; };
+		A747E9E02F4721E7007A9CFF /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		A747E9E12F4721E7007A9CFF /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		A747E9E22F4721E7007A9CFF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A747E9E72F4721E7007A9CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A747E9E82F4721E7007A9CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A747E9E92F4721E7007A9CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A747E9EB2F4721E7007A9CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A747E9ED2F4721E7007A9CFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A747E9FD2F4721F0007A9CFF /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		A7DC91E02F4720D000B5414C /* VIPERToModernArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERToModernArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A7DC91F22F4720D100B5414C /* Exceptions for "VIPERToModernArchitecture" folder in "VIPERToModernArchitecture" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = A7DC91DF2F4720D000B5414C /* VIPERToModernArchitecture */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		A7DC91E22F4720D000B5414C /* VIPERToModernArchitecture */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A7DC91F22F4720D100B5414C /* Exceptions for "VIPERToModernArchitecture" folder in "VIPERToModernArchitecture" target */,
-			);
-			path = VIPERToModernArchitecture;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A7DC91DD2F4720D000B5414C /* Frameworks */ = {
@@ -42,10 +53,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A747E9DB2F4721E7007A9CFF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A747E9DA2F4721E7007A9CFF /* SceneDelegate.swift */,
+				A747E9D92F4721E7007A9CFF /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A747E9E32F4721E7007A9CFF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A747E9DC2F4721E7007A9CFF /* LoginContracts.swift */,
+				A747E9DD2F4721E7007A9CFF /* LoginEntity.swift */,
+				A747E9DE2F4721E7007A9CFF /* LoginInterector.swift */,
+				A747E9E02F4721E7007A9CFF /* LoginPresenter.swift */,
+				A747E9E12F4721E7007A9CFF /* LoginRouter.swift */,
+				A747E9E22F4721E7007A9CFF /* LoginViewController.swift */,
+				A747E9DF2F4721E7007A9CFF /* LoginModuleBuilder.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A747E9E42F4721E7007A9CFF /* LegacyVIPER */ = {
+			isa = PBXGroup;
+			children = (
+				A747E9E32F4721E7007A9CFF /* Login */,
+			);
+			path = LegacyVIPER;
+			sourceTree = "<group>";
+		};
+		A747E9E52F4721E7007A9CFF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A747E9FD2F4721F0007A9CFF /* LoadingOverlay.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A747E9E62F4721E7007A9CFF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A747E9E52F4721E7007A9CFF /* UI */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A747E9EE2F4721E7007A9CFF /* VIPERToModernArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				A747E9DB2F4721E7007A9CFF /* App */,
+				A747E9E42F4721E7007A9CFF /* LegacyVIPER */,
+				A747E9E62F4721E7007A9CFF /* Shared */,
+				A747E9E72F4721E7007A9CFF /* Assets.xcassets */,
+				A747E9E82F4721E7007A9CFF /* Info.plist */,
+				A747E9EA2F4721E7007A9CFF /* LaunchScreen.storyboard */,
+				A747E9EC2F4721E7007A9CFF /* Main.storyboard */,
+				A747E9ED2F4721E7007A9CFF /* ViewController.swift */,
+			);
+			path = VIPERToModernArchitecture;
+			sourceTree = "<group>";
+		};
 		A7DC91D72F4720D000B5414C = {
 			isa = PBXGroup;
 			children = (
-				A7DC91E22F4720D000B5414C /* VIPERToModernArchitecture */,
+				A747E9EE2F4721E7007A9CFF /* VIPERToModernArchitecture */,
 				A7DC91E12F4720D000B5414C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,9 +145,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A7DC91E22F4720D000B5414C /* VIPERToModernArchitecture */,
 			);
 			name = VIPERToModernArchitecture;
 			packageProductDependencies = (
@@ -122,6 +192,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A747E9F92F4721E7007A9CFF /* Assets.xcassets in Resources */,
+				A747E9FB2F4721E7007A9CFF /* LaunchScreen.storyboard in Resources */,
+				A747E9FC2F4721E7007A9CFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +205,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A747E9EF2F4721E7007A9CFF /* AppDelegate.swift in Sources */,
+				A747E9F02F4721E7007A9CFF /* SceneDelegate.swift in Sources */,
+				A747E9F12F4721E7007A9CFF /* LoginContracts.swift in Sources */,
+				A747E9FE2F4721F4007A9CFF /* LoadingOverlay.swift in Sources */,
+				A747E9F22F4721E7007A9CFF /* LoginEntity.swift in Sources */,
+				A747E9F32F4721E7007A9CFF /* LoginInterector.swift in Sources */,
+				A747E9F42F4721E7007A9CFF /* LoginModuleBuilder.swift in Sources */,
+				A747E9F52F4721E7007A9CFF /* LoginPresenter.swift in Sources */,
+				A747E9F62F4721E7007A9CFF /* LoginRouter.swift in Sources */,
+				A747E9F72F4721E7007A9CFF /* LoginViewController.swift in Sources */,
+				A747E9F82F4721E7007A9CFF /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A747E9EA2F4721E7007A9CFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A747E9E92F4721E7007A9CFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A747E9EC2F4721E7007A9CFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A747E9EB2F4721E7007A9CFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A7DC91F42F4720D100B5414C /* Debug */ = {
