@@ -11,12 +11,12 @@ final class LoginPresenter: LoginContracts.Presenter {
 
     private weak var view: LoginContracts.View?
     private let interactor: LoginContracts.Interactor
-    private let router: LoginContracts.Router
 
-    init(view: LoginContracts.View, interactor: LoginContracts.Interactor, router: LoginContracts.Router) {
+    var onLoginSuccess: (() -> Void)?
+
+    init(view: LoginContracts.View, interactor: LoginContracts.Interactor) {
         self.view = view
         self.interactor = interactor
-        self.router = router
     }
 
     func viewDidLoad() {
@@ -46,7 +46,7 @@ final class LoginPresenter: LoginContracts.Presenter {
                 switch result {
                 case .success:
                     view.showSuccess("Login success.")
-                    self.router.routeToHome()
+                    self.onLoginSuccess?()
 
                 case .failure(let error):
                     view.showError(error.localizedDescription)

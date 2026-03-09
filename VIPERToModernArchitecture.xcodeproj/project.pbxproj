@@ -14,7 +14,6 @@
 		A747E9F32F4721E7007A9CFF /* LoginInterector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9DE2F4721E7007A9CFF /* LoginInterector.swift */; };
 		A747E9F42F4721E7007A9CFF /* LoginModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9DF2F4721E7007A9CFF /* LoginModuleBuilder.swift */; };
 		A747E9F52F4721E7007A9CFF /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9E02F4721E7007A9CFF /* LoginPresenter.swift */; };
-		A747E9F62F4721E7007A9CFF /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9E12F4721E7007A9CFF /* LoginRouter.swift */; };
 		A747E9F72F4721E7007A9CFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9E22F4721E7007A9CFF /* LoginViewController.swift */; };
 		A747E9F82F4721E7007A9CFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9ED2F4721E7007A9CFF /* ViewController.swift */; };
 		A747E9F92F4721E7007A9CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A747E9E72F4721E7007A9CFF /* Assets.xcassets */; };
@@ -32,7 +31,6 @@
 		A747E9DE2F4721E7007A9CFF /* LoginInterector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterector.swift; sourceTree = "<group>"; };
 		A747E9DF2F4721E7007A9CFF /* LoginModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleBuilder.swift; sourceTree = "<group>"; };
 		A747E9E02F4721E7007A9CFF /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		A747E9E12F4721E7007A9CFF /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		A747E9E22F4721E7007A9CFF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A747E9E72F4721E7007A9CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A747E9E82F4721E7007A9CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				A747E9DD2F4721E7007A9CFF /* LoginEntity.swift */,
 				A747E9DE2F4721E7007A9CFF /* LoginInterector.swift */,
 				A747E9E02F4721E7007A9CFF /* LoginPresenter.swift */,
-				A747E9E12F4721E7007A9CFF /* LoginRouter.swift */,
 				A747E9E22F4721E7007A9CFF /* LoginViewController.swift */,
 				A747E9DF2F4721E7007A9CFF /* LoginModuleBuilder.swift */,
 			);
@@ -217,7 +214,6 @@
 				A747E9F32F4721E7007A9CFF /* LoginInterector.swift in Sources */,
 				A747E9F42F4721E7007A9CFF /* LoginModuleBuilder.swift in Sources */,
 				A747E9F52F4721E7007A9CFF /* LoginPresenter.swift in Sources */,
-				A747E9F62F4721E7007A9CFF /* LoginRouter.swift in Sources */,
 				A747E9F72F4721E7007A9CFF /* LoginViewController.swift in Sources */,
 				A747E9F82F4721E7007A9CFF /* ViewController.swift in Sources */,
 			);

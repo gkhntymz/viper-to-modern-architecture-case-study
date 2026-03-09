@@ -28,9 +28,4 @@ enum LoginContracts {
     protocol Interactor: AnyObject {
         func login(email: String, password: String, completion: @escaping (Result<LoginEntity.Response, Error>) -> Void)
     }
-
-    // MARK: - Router
-    protocol Router: AnyObject {
-        func routeToHome()
-    }
 }

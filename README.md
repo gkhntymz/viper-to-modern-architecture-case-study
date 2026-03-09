@@ -80,6 +80,15 @@ Benefits:
 
 ---
 
+# 🔧 Phase 04 – Refactor Step 2 (Remove Router)
+
+The next refactor removes the feature-level `LoginRouter`.
+
+In the legacy VIPER structure, navigation was owned by the router:
+
+```text
+ViewController → Presenter → Router
+
 # 🚀 Next Steps (Upcoming Refactors)
 
 The next phases progressively modernize the architecture.

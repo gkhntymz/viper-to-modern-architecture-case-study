@@ -9,14 +9,14 @@ import UIKit
 
 enum LoginModuleBuilder {
 
-    static func build(in nav: UINavigationController) -> UIViewController {
-
+    static func build(onLoginSuccess: @escaping () -> Void) -> UIViewController {
         let view = LoginViewController()
         let interactor = LoginInteractor()
-        let router = LoginRouter(nav: nav)
-        let presenter = LoginPresenter(view: view, interactor: interactor, router: router)
+        let presenter = LoginPresenter(view: view, interactor: interactor)
 
+        presenter.onLoginSuccess = onLoginSuccess
         view.presenter = presenter
+
         return view
     }
 }

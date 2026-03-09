@@ -17,10 +17,25 @@ final class AppCoordinator {
     }
 
     func start() {
-        let loginVC = LoginModuleBuilder.build()
+        let loginVC = LoginModuleBuilder.build { [weak self] in
+            self?.showHome()
+        }
+
         navigationController.setViewControllers([loginVC], animated: false)
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+
+    private func showHome() {
+        let alert = UIAlertController(
+            title: "Success",
+            message: "Navigation is now handled by AppCoordinator.",
+            preferredStyle: .alert
+        )
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+
+        navigationController.present(alert, animated: true)
     }
 }
