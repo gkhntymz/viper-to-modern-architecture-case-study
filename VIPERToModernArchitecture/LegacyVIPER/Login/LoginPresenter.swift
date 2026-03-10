@@ -7,6 +7,8 @@
 
 import Foundation
 
+import Foundation
+
 final class LoginPresenter: LoginContracts.Presenter {
 
     private weak var view: LoginContracts.View?
@@ -24,7 +26,6 @@ final class LoginPresenter: LoginContracts.Presenter {
     }
 
     func didTapLogin() {
-
         guard let view else { return }
 
         let email = view.getEmail()
@@ -37,18 +38,23 @@ final class LoginPresenter: LoginContracts.Presenter {
 
         view.showLoading(true)
 
-        interactor.login(email: email, password: password) { [weak self] result in
-            DispatchQueue.main.async {
-                guard let self, let view = self.view else { return }
+        Task { [weak self] in
+            guard let self else { return }
 
-                view.showLoading(false)
+            do {
+                _ = try await interactor.login(email: email, password: password)
 
-                switch result {
-                case .success:
+                await MainActor.run {
+                    guard let view = self.view else { return }
+                    view.showLoading(false)
                     view.showSuccess("Login success.")
                     self.onLoginSuccess?()
+                }
 
-                case .failure(let error):
+            } catch {
+                await MainActor.run {
+                    guard let view = self.view else { return }
+                    view.showLoading(false)
                     view.showError(error.localizedDescription)
                 }
             }

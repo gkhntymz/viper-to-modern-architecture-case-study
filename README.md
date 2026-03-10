@@ -1,10 +1,11 @@
 # VIPER → Modern iOS Architecture Case Study
 
-A production-style case study demonstrating how to evolve a legacy VIPER module into a modern, scalable iOS architecture.
+A production-style case study demonstrating how to evolve a legacy **VIPER module** into a modern, scalable iOS architecture.
 
-This repository is not about proving that VIPER is bad.  
+This repository is **not about proving that VIPER is bad**.  
 It is about understanding **trade-offs, coupling, and modernization strategy**.
 
+```
 VIPER (Legacy)
       ↓
 Coordinator
@@ -16,12 +17,13 @@ Dependency Injection
 Async/Await
       ↓
 Modern Modular Architecture
+```
 
 ---
 
 # 🎯 Goal
 
-Show how to:
+This project demonstrates how to:
 
 - Analyze legacy architecture
 - Identify structural coupling
@@ -30,16 +32,16 @@ Show how to:
 - Improve testability & maintainability
 - Apply modern Swift Concurrency
 
-This is the type of architectural thinking expected at **Senior / Staff / Principal iOS levels**.
+This is the type of architectural thinking expected at **Senior / Staff / Principal iOS engineering levels**.
 
 ---
 
 # 🧭 Architecture Evolution Timeline
 
-This repository evolves step-by-step.
-
+This repository evolves **step-by-step**.  
 Each commit represents a real architectural transition.
 
+```
 01 - Baseline (Broken / Legacy VIPER)
 02 - Problems (Pain Points)
 03 - Refactor Step 1 – Introduce Coordinator
@@ -47,32 +49,125 @@ Each commit represents a real architectural transition.
 05 - Refactor Step 3 – Introduce Dependency Injection
 06 - Refactor Step 4 – Async/Await Migration
 07 - Final Modern Modular Architecture
+```
 
 The goal is to demonstrate **how real codebases evolve**, not how greenfield architectures are designed.
 
+```
 Legacy VIPER
-        ↓
+      ↓
 Coordinator Layer
-        ↓
+      ↓
 Feature Isolation
-        ↓
+      ↓
 Modern Architecture
+```
 
 ---
 
-# 📦 Phase 01 – Baseline (Legacy VIPER)
+# 📦 Phase 01 — Baseline (Legacy VIPER)
 
-The project starts with a fully implemented legacy VIPER login module.
+The project starts with a fully implemented **legacy VIPER login module**.
 
-Structure:
+Typical structure:
 
+```
+SceneDelegate → ModuleBuilder → Router → ViewController
+```
+
+VIPER responsibilities:
+
+- **ViewController** → UI
+- **Presenter** → presentation logic
+- **Interactor** → business logic
+- **Router** → navigation
+- **ModuleBuilder** → dependency assembly
+
+While this structure enforces separation, it also introduces **significant indirection and boilerplate** for relatively small features.
+
+---
+
+# ⚠️ Phase 02 — Problems (Pain Points)
+
+Before refactoring, we analyze the architectural limitations.
+
+### Over-Fragmentation
+
+A simple login screen requires multiple files:
+
+- ViewController
+- Presenter
+- Interactor
+- Router
+- Contracts
+- Entity
+- ModuleBuilder
+
+This increases cognitive overhead and slows down feature development.
+
+---
+
+### Router-Owned Navigation
+
+Navigation is controlled by feature-level routers.
+
+This becomes problematic when:
+
+- coordinating multi-feature flows
+- managing deep links
+- enforcing app-level navigation policies
+
+---
+
+### Dependency Composition Complexity
+
+Dependencies are implicitly created inside feature modules.
+
+This leads to:
+
+- hidden dependency graphs
+- difficult testing
+- environment configuration issues
+
+---
+
+### Protocol Explosion
+
+Strict VIPER often leads to excessive protocols that add abstraction cost without improving flexibility.
+
+---
+
+### Callback-Based Async Flow
+
+Legacy code often relies on nested completion handlers:
+
+```
+Presenter → Interactor → completion handler → DispatchQueue.main.async
+```
+
+As complexity grows, this becomes harder to maintain.
+
+---
+
+# 🔧 Phase 03 — Introduce Coordinator
+
+The first refactor introduces an **AppCoordinator**.
+
+Responsibility for application startup and root navigation moves from the feature layer to the **application layer**.
+
+Before:
+
+```
 SceneDelegate → ModuleBuilder → Router
+```
 
 After:
 
+```
 SceneDelegate → AppCoordinator → LoginModuleBuilder
+```
 
-Benefits:
+### Benefits
 
 - Navigation begins moving out of feature modules
 - App-level flow orchestration becomes explicit
@@ -80,70 +175,52 @@ Benefits:
 
 ---
 
-# 🔧 Phase 04 – Refactor Step 2 (Remove Router)
+# 🔧 Phase 04 — Remove Router
 
 The next refactor removes the feature-level `LoginRouter`.
 
-In the legacy VIPER structure, navigation was owned by the router:
+Previously:
 
-```text
+```
 ViewController → Presenter → Router
+```
 
-# 🚀 Next Steps (Upcoming Refactors)
+After the refactor:
 
-The next phases progressively modernize the architecture.
+```
+ViewController → Presenter → AppCoordinator
+```
 
-### Step 2 – Remove Router
+### Changes
 
-Navigation will move completely to coordinators.
+- Removed `LoginRouter`
+- Presenter no longer depends on router
+- Navigation events exposed via closure
+- `AppCoordinator` handles navigation
 
-This simplifies feature modules and removes unnecessary routing layers.
+### Result
 
----
-
-### Step 3 – Introduce Dependency Injection
-
-Replace ModuleBuilder-based wiring with a more structured dependency composition approach.
-
-Goals:
-
-- easier testing
-- explicit dependency graph
-- better scalability
+- fewer files
+- simpler feature modules
+- centralized navigation orchestration
 
 ---
 
-### Step 4 – Async/Await Migration
+# 🔧 Phase 05 — Introduce Dependency Injection
 
-Modernize async workflows using Swift Concurrency.
-
-Replace:
-
-completion handlers
-
-with
-
-This improves:
-
-- readability
-- structured concurrency
-- cancellation support
-
----
-
-## Phase 05 – Introduce Dependency Injection
-
-In the baseline architecture, feature modules implicitly created their own dependencies.
+Originally, feature modules implicitly created their own dependencies.
 
 Example:
 
+```
 Interactor → internally creates services
+```
 
 This makes testing difficult and tightly couples features to implementation details.
 
 ### Refactor
 
-Dependencies are now injected from the application layer.
+Dependencies are now injected from the **application layer**.
 
 Changes:
 
@@ -155,23 +232,51 @@ Changes:
 
 ### Result
 
-Dependency ownership moves from feature modules to the application layer.
+Dependency ownership moves from feature modules to the **application layer**.
 
-This improves:
+Benefits:
 
-- testability
-- environment configuration
-- architectural clarity
+- improved testability
+- explicit dependency graph
+- better scalability
 
-### Final Phase – Modern Modular Architecture
+---
 
-End state will demonstrate a modern architecture with:
+# ⚡ Phase 06 — Async/Await Migration
+
+The login flow is modernized using **Swift Concurrency**.
+
+Previously:
+
+```
+Presenter → Interactor → completion handler → DispatchQueue.main.async
+```
+
+Now:
+
+```
+Presenter → Task → await Interactor.login()
+```
+
+### Improvements
+
+- linear execution flow
+- cleaner error handling
+- less callback nesting
+- explicit UI updates via `MainActor`
+
+---
+
+# 🚀 Final Phase — Modern Modular Architecture
+
+The final architecture demonstrates:
 
 - Coordinator-based navigation
-- Clear dependency injection
+- Dependency injection
 - Async-first service layer
 - Reduced boilerplate
 - Scalable feature modules
+- Clear responsibility boundaries
 
 ---
 
@@ -179,9 +284,9 @@ End state will demonstrate a modern architecture with:
 
 Many production iOS codebases:
 
-- Started with VIPER
-- Grew over years
-- Now struggle with complexity
+- started with VIPER
+- grew over years
+- now struggle with complexity
 
 The real engineering challenge is:
 
@@ -193,43 +298,41 @@ This repository documents that journey.
 
 # 🧠 Intended Audience
 
-- Senior iOS Engineers
-- Staff Engineers
-- Mobile Tech Leads
-- Architecture reviewers
-- Hiring managers
+- Senior iOS Engineers  
+- Staff Engineers  
+- Mobile Tech Leads  
+- Architecture reviewers  
+- Hiring managers  
 
 ---
 
 # 🛠 Tech Stack
 
-- Swift
-- UIKit
-- VIPER (legacy baseline)
-- Coordinator Pattern
-- MVVM (migration direction)
-- Async/Await
-- Clean architecture principles
+- Swift  
+- UIKit  
+- VIPER (legacy baseline)  
+- Coordinator Pattern  
+- Dependency Injection  
+- Async/Await  
+- Clean Architecture principles  
 
 ---
 
 # 📁 Project Structure
 
+```
 App/
 LegacyVIPER/
 Shared/
-
-App/
-LegacyVIPER/
-Shared/
+```
 
 ---
 
 # 📌 What This Is Not
 
-- Not a VIPER tutorial
-- Not a beginner iOS project
-- Not a framework showcase
+- Not a VIPER tutorial  
+- Not a beginner iOS project  
+- Not a framework showcase  
 
 It is an **architecture evolution case study**.
 

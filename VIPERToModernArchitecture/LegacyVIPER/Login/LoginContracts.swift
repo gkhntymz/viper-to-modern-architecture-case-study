@@ -24,8 +24,7 @@ enum LoginContracts {
         func didTapLogin()
     }
 
-    // MARK: - Interactor
     protocol Interactor: AnyObject {
-        func login(email: String, password: String, completion: @escaping (Result<LoginEntity.Response, Error>) -> Void)
+        func login(email: String, password: String) async throws -> LoginEntity.Response
     }
 }
