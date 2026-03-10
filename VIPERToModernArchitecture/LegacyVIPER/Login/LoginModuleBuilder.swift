@@ -9,12 +9,19 @@ import UIKit
 
 enum LoginModuleBuilder {
 
-    static func build(onLoginSuccess: @escaping () -> Void) -> UIViewController {
+    static func build(authService: AuthService, onLoginSuccess: @escaping () -> Void) -> UIViewController {
+
         let view = LoginViewController()
-        let interactor = LoginInteractor()
-        let presenter = LoginPresenter(view: view, interactor: interactor)
+
+        let interactor = LoginInteractor(authService: authService)
+
+        let presenter = LoginPresenter(
+            view: view,
+            interactor: interactor
+        )
 
         presenter.onLoginSuccess = onLoginSuccess
+
         view.presenter = presenter
 
         return view

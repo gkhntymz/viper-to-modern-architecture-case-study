@@ -131,6 +131,38 @@ This improves:
 
 ---
 
+## Phase 05 – Introduce Dependency Injection
+
+In the baseline architecture, feature modules implicitly created their own dependencies.
+
+Example:
+
+Interactor → internally creates services
+
+This makes testing difficult and tightly couples features to implementation details.
+
+### Refactor
+
+Dependencies are now injected from the application layer.
+
+Changes:
+
+- Introduced `AuthService` protocol
+- Added `DefaultAuthService`
+- `LoginInteractor` now receives dependencies via initializer
+- `LoginModuleBuilder` no longer constructs services
+- `AppCoordinator` owns dependency creation
+
+### Result
+
+Dependency ownership moves from feature modules to the application layer.
+
+This improves:
+
+- testability
+- environment configuration
+- architectural clarity
+
 ### Final Phase – Modern Modular Architecture
 
 End state will demonstrate a modern architecture with:

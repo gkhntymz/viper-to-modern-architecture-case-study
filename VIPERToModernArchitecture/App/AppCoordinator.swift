@@ -10,6 +10,7 @@ import UIKit
 final class AppCoordinator {
     private let window: UIWindow
     private let navigationController: UINavigationController
+    private let authService = DefaultAuthService()
 
     init(window: UIWindow) {
         self.window = window
@@ -17,7 +18,7 @@ final class AppCoordinator {
     }
 
     func start() {
-        let loginVC = LoginModuleBuilder.build { [weak self] in
+        let loginVC = LoginModuleBuilder.build(authService: authService) { [weak self] in
             self?.showHome()
         }
 

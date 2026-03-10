@@ -20,6 +20,7 @@
 		A747E9FB2F4721E7007A9CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A747E9EA2F4721E7007A9CFF /* LaunchScreen.storyboard */; };
 		A747E9FC2F4721E7007A9CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A747E9EC2F4721E7007A9CFF /* Main.storyboard */; };
 		A747E9FE2F4721F4007A9CFF /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747E9FD2F4721F0007A9CFF /* LoadingOverlay.swift */; };
+		A75AB32C2F5FEFF9008D08B7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AB32B2F5FEFF5008D08B7 /* AuthService.swift */; };
 		A782FDDA2F5E9B1A0017A51D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782FDD92F5E9B170017A51D /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		A747E9EB2F4721E7007A9CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A747E9ED2F4721E7007A9CFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A747E9FD2F4721F0007A9CFF /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		A75AB32B2F5FEFF5008D08B7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A782FDD92F5E9B170017A51D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A7DC91E02F4720D000B5414C /* VIPERToModernArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERToModernArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 			children = (
 				A747E9DB2F4721E7007A9CFF /* App */,
 				A747E9E42F4721E7007A9CFF /* LegacyVIPER */,
+				A75AB32A2F5FEFF0008D08B7 /* Services */,
 				A747E9E62F4721E7007A9CFF /* Shared */,
 				A747E9E72F4721E7007A9CFF /* Assets.xcassets */,
 				A747E9E82F4721E7007A9CFF /* Info.plist */,
@@ -113,6 +116,14 @@
 				A747E9ED2F4721E7007A9CFF /* ViewController.swift */,
 			);
 			path = VIPERToModernArchitecture;
+			sourceTree = "<group>";
+		};
+		A75AB32A2F5FEFF0008D08B7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A75AB32B2F5FEFF5008D08B7 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A7DC91D72F4720D000B5414C = {
@@ -208,6 +219,7 @@
 				A782FDDA2F5E9B1A0017A51D /* AppCoordinator.swift in Sources */,
 				A747E9EF2F4721E7007A9CFF /* AppDelegate.swift in Sources */,
 				A747E9F02F4721E7007A9CFF /* SceneDelegate.swift in Sources */,
+				A75AB32C2F5FEFF9008D08B7 /* AuthService.swift in Sources */,
 				A747E9F12F4721E7007A9CFF /* LoginContracts.swift in Sources */,
 				A747E9FE2F4721F4007A9CFF /* LoadingOverlay.swift in Sources */,
 				A747E9F22F4721E7007A9CFF /* LoginEntity.swift in Sources */,
