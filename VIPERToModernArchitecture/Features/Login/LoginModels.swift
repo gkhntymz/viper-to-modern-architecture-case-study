@@ -1,5 +1,5 @@
 //
-//  LoginEntity.swift
+//  LoginModels.swift
 //  VIPERToModernArchitecture
 //
 //  Created by Gökhan Taymaz on 19.02.2026.
@@ -7,8 +7,7 @@
 
 import Foundation
 
-enum LoginEntity {
-
+enum LoginModels {
     struct Request: Encodable {
         let email: String
         let password: String

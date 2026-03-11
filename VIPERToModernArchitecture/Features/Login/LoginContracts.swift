@@ -25,6 +25,6 @@ enum LoginContracts {
     }
 
     protocol Interactor: AnyObject {
-        func login(email: String, password: String) async throws -> LoginEntity.Response
+        func login(email: String, password: String) async throws -> LoginModels.Response
     }
 }

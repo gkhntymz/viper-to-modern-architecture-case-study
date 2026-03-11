@@ -15,7 +15,7 @@ final class LoginInteractor: LoginContracts.Interactor {
         self.authService = authService
     }
 
-    func login(email: String, password: String) async throws -> LoginEntity.Response {
+    func login(email: String, password: String) async throws -> LoginModels.Response {
         try await authService.login(email: email, password: password)
     }
 }

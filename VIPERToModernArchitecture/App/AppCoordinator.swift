@@ -10,20 +10,22 @@ import UIKit
 final class AppCoordinator {
     private let window: UIWindow
     private let navigationController: UINavigationController
-    private let authService = DefaultAuthService()
+    private let container: AppContainer
 
-    init(window: UIWindow) {
+    init(window: UIWindow, container: AppContainer = AppContainer()) {
         self.window = window
         self.navigationController = UINavigationController()
+        self.container = container
     }
 
     func start() {
-        let loginVC = LoginModuleBuilder.build(authService: authService) { [weak self] in
+        let loginVC = LoginFactory.makeLoginViewController(
+            authService: container.authService
+        ) { [weak self] in
             self?.showHome()
         }
 
         navigationController.setViewControllers([loginVC], animated: false)
-
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
@@ -31,12 +33,10 @@ final class AppCoordinator {
     private func showHome() {
         let alert = UIAlertController(
             title: "Success",
-            message: "Navigation is now handled by AppCoordinator.",
+            message: "Final architecture flow is now driven by coordinator + DI + async/await.",
             preferredStyle: .alert
         )
-
         alert.addAction(UIAlertAction(title: "OK", style: .default))
-
         navigationController.present(alert, animated: true)
     }
 }

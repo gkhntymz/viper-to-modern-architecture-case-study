@@ -8,16 +8,16 @@
 import Foundation
 
 protocol AuthService {
-    func login(email: String, password: String) async throws -> LoginEntity.Response
+    func login(email: String, password: String) async throws -> LoginModels.Response
 }
 
 final class DefaultAuthService: AuthService {
 
-    func login(email: String, password: String) async throws -> LoginEntity.Response {
+    func login(email: String, password: String) async throws -> LoginModels.Response {
         try await Task.sleep(nanoseconds: 1_000_000_000)
 
-        if email == "test@test.com" && password == "123456" {
-            return LoginEntity.Response(
+        if email == "a@b.com" && password == "x" {
+            return LoginModels.Response(
                 token: "mock-token",
                 userId: "user-123"
             )
